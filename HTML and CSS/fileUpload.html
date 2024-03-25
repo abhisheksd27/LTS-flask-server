@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+    <title>LTS</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #e2e8f0;
+        }
+
+        .upload-btn {
+            position: relative;
+            overflow: hidden;
+            height: 35px;
+            width: 160px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: #4a5568;
+            color: #e2e8f0;
+        }
+
+        .upload-btn:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            transition: all 0.5s ease-in-out;
+        }
+
+        .upload-btn:hover:before {
+            left: 100%;
+        }
+
+        .upload-btn:hover {
+            animation: shake 0.5s;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+            background-color: #718096;
+        }
+
+        .container {
+            background-color: #334155;
+            box-shadow: 0 16px 24px rgba(0, 0, 0, 0.5);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            box-shadow: 0 24px 36px rgba(0, 0, 0, 0.7);
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(5px) rotate(5deg); }
+            50% { transform: translateX(-5px) rotate(-5deg); }
+            75% { transform: translateX(5px) rotate(5deg); }
+            100% { transform: translateX(0); }
+        }
+
+        .file-input {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            background-color: #4a5568;
+            color: #e2e8f0;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .file-input:focus {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+        }
+
+        .shake-head {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            transition: color 0.2s, text-shadow 0.3s;
+        }
+
+        .shake-head:hover {
+            color: #a0aec0;
+            text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="flex flex-col items-center justify-center h-screen">
+        <h1 class="text-4xl font-bold mb-6 text-center shake-head">Lip to speech synthesis</h1>
+
+        <br>
+        <br>
+        <div class="container p-8 rounded-lg max-w-md mx-auto">
+            <h3 class="text-2xl font-bold mb-6 text-center shake-head">Upload a Video File</h3>
+            <form method="post" enctype="multipart/form-data" class="mb-4">
+                <div class="flex items-center justify-center form-container rounded-md p-4">
+                    <input type="file" name="file" class="w-full py-2 px-3 rounded focus:outline-none focus:shadow-outline file-input" style="height: 50px;">
+                    <button type="submit" class="ml-2 upload-btn">
+                        Upload
+                    </button>
+                </div>
+            </form>
+            <p class="mb-4 text-gray-400">Did you say: {{ transcription }}</p>
+            <button type="button" class="mx-auto block upload-btn" onclick="downloadVideo('{{ file }}')">
+                Download Video
+            </button>
+        </div>
+        <a href="https://drive.google.com/file/d/19wN9XEQzehPMXX-82iJ9csTjrFpG_Iwd/view?usp=drive_link" download="documentation.pdf" class="block mx-auto mt-4 upload-btn">
+            Documentation
+        </a>
+          
+        
+    </div>
+    <script>function downloadVideo(fileName) {
+        const url = "{{ url_for('download', filename='file') }}" + fileName; 
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = fileName; 
+        link.click(); 
+    }</script>
+</body>
+</html>
