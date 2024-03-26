@@ -1,6 +1,9 @@
 
 Lip to Speech Project
 
+*Team Details*:-
+  Team Name :-CS Assassins
+
 Welcome to the Lip to Speech project repository. This project aims to convert lip movements into speech using computer vision techniques and machine learning algorithms. This README provides an overview of the project, its contents, and instructions for usage.
 
 Project Overview:
