@@ -17,3 +17,10 @@ Videos: A video recording demonstrating the working prototype of the lip to spee
 
 Note:
 Please be informed that this repository solely contains the frontend part of the Lip to Speech project, including HTML and CSS files, along with relevant images and videos demonstrating the application's functionality. Due to remote repository errors, other components such as backend scripts, machine learning models, and additional documentation are not uploaded here.
+
+
+full project link:-
+https://drive.google.com/file/d/1PGYxPKCkuEc7hGyT7TFA1McGFpp5-mpt/view?usp=drive_link
+
+video recording of demonstration:
+https://drive.google.com/file/d/1NPKezTnNdkPaxjFbZmQDgSAD-RWXF-Bc/view?usp=drive_link
