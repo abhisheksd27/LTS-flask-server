@@ -5,11 +5,11 @@ Lip to Speech Project
 
   **Team Name** :-  ***CS Assassins***
 
-**Team** :-
 
-  Team Leader :- Akhilesh N -- 4MN20CS002
 
-  Team Members:-
+  **Team Leader** :- Akhilesh N -- 4MN20CS002
+
+  **Team Members:-**
   
   1.Abhishek --1CR20IS007
   
