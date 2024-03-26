@@ -7,10 +7,15 @@ Lip to Speech Project
 
 **Team** :-
   Team Leader :- Akhilesh N -- 4MN20CS002
+
   Team Members:-
+  
   1.Abhishek --1CR20IS007
+  
   2.Pratham kalwani --1BY20CS138
+  
   3.Harshitha R -- 1CR20IS071
+  
   4.Dhathri S -- 1CR20IS056
 
 Welcome to the Lip to Speech project repository. This project aims to convert lip movements into speech using computer vision techniques and machine learning algorithms. This README provides an overview of the project, its contents, and instructions for usage.
